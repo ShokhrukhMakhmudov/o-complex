@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+  .container {
+    width: 100%;
+    max-width: 1340px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 0%),
+      url("../../public/image.avif") no-repeat;
+    background-size: cover;
+    background-position: center; */
+  }
+  .hero-desc {
+    -webkit-text-stroke: 0.3px #000000;
+    text-shadow: 1px 2px #000;
+  }
+  .about-icon circle {
+    fill: #f67330;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    zoom: 0.7;
+  }
+}
+.footer-logo svg stop {
+  stop-color: currentColor;
+}
