@@ -6,17 +6,14 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
     colors: {
-      primary: "#eaa936",
       white: "#fff",
       black: "#000",
+    },
+    extend: {
+      gridTemplateColumns: {
+        reviews: "repeat(2, minmax(0, 468px))",
+      },
     },
   },
   plugins: [],
