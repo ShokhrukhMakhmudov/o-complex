@@ -2,12 +2,27 @@
 import { CartContext } from "@/components/context/CartContext";
 import { AlertContext } from "@/components/context/AlertContext";
 import { postItem } from "@/components/Requests/postData";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 export default function CartForm() {
   const { store } = useContext(CartContext);
-  const { status, setAlert } = useContext(AlertContext);
+  const { setAlert } = useContext(AlertContext);
   const [phone, setPhone] = useState("+7(___) ___ __-__");
   const [error, setError] = useState(false);
+
+  useEffect(() => {
+    if (
+      phone
+        .slice(1)
+        .replaceAll("(", "")
+        .replaceAll(")", "")
+        .replaceAll(" ", "")
+        .replaceAll("-", "")
+        .replaceAll("_", "") === "7"
+    ) {
+      return setPhone(localStorage.getItem("phone"));
+    }
+    localStorage.setItem("phone", phone);
+  }, [phone]);
 
   function inputPhone(e) {
     console.log(e?.nativeEvent?.data);

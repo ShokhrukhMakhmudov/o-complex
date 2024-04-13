@@ -10,7 +10,7 @@ export default function ProductItem({ data }) {
       key={id}
       className="min-w-[300px] flex flex-col p-2.5 rounded-2xl bg-[#D9D9D9]">
       <Image
-        priority={false}
+        priority={true}
         src={image_url}
         alt="product"
         width={280}
