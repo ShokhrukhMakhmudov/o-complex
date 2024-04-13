@@ -3,7 +3,9 @@ import Cart from "@/components/Cart";
 import Header from "@/components/Header";
 import Products from "@/components/Products";
 import Reviews from "@/components/Reviews";
-import { AlertProvider, Provider } from "@/components/context";
+import { CartProvider } from "@/components/context/CartContext";
+import { AlertProvider } from "@/components/context/AlertContext";
+import { ProductsProvider } from "@/components/context/ProductsContext";
 
 export default function Home() {
   return (
@@ -12,10 +14,12 @@ export default function Home() {
         <Header />
         <main>
           <Reviews />
-          <Provider>
+          <CartProvider>
             <Cart />
-            <Products />
-          </Provider>
+            <ProductsProvider>
+              <Products />
+            </ProductsProvider>
+          </CartProvider>
           <Alert />
         </main>
       </AlertProvider>

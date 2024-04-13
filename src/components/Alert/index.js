@@ -1,6 +1,6 @@
 "use client";
-import { useContext, useState } from "react";
-import { AlertContext } from "../context";
+import { useContext } from "react";
+import { AlertContext } from "../context/AlertContext";
 
 export default function Alert() {
   const { status, setAlert } = useContext(AlertContext);

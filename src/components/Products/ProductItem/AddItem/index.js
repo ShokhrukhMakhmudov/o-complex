@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useContext } from "react";
-import { ProductsContext } from "@/components/context";
+import { CartContext } from "@/components/context/CartContext";
 
 export default function AddItem({ item }) {
   const { store, addItem, deleteItem, increment, decrement, checkItem } =
-    useContext(ProductsContext);
+    useContext(CartContext);
 
   const [data] = checkItem(item.id);
 

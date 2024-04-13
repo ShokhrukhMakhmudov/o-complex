@@ -1,5 +1,5 @@
 import React from "react";
-import { getReviews } from "../Hooks/getData";
+import { getReviews } from "../Requests/getData";
 
 export default async function Reviews() {
   const data = await getReviews();
@@ -7,7 +7,7 @@ export default async function Reviews() {
   return (
     <section className="mb-10">
       <div className="container grid grid-cols-1 sm:grid-cols-reviews gap-8 justify-center">
-        {data &&
+        {data?.length &&
           data.map(({ text }, ind) => {
             return (
               <div

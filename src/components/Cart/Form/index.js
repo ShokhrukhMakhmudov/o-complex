@@ -1,9 +1,10 @@
 "use client";
-import { AlertContext, ProductsContext } from "@/components/context";
-import { postItem } from "@/components/Hooks/postData";
+import { CartContext } from "@/components/context/CartContext";
+import { AlertContext } from "@/components/context/AlertContext";
+import { postItem } from "@/components/Requests/postData";
 import React, { useState, useContext } from "react";
 export default function CartForm() {
-  const { store } = useContext(ProductsContext);
+  const { store } = useContext(CartContext);
   const { status, setAlert } = useContext(AlertContext);
   const [phone, setPhone] = useState("+7(___) ___ __-__");
   const [error, setError] = useState(false);

@@ -4,11 +4,13 @@ import AddItem from "./AddItem";
 
 export default function ProductItem({ data }) {
   const { id, image_url, title, description, price } = data;
+
   return (
     <div
       key={id}
       className="min-w-[300px] flex flex-col p-2.5 rounded-2xl bg-[#D9D9D9]">
       <Image
+        priority={false}
         src={image_url}
         alt="product"
         width={280}
